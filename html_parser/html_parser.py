@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""This is gonna parse text documents into html"""
+"""Converst txt file into html based on a template"""
 
 from jinja2 import Template
 
