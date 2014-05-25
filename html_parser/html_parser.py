@@ -7,7 +7,7 @@ import os
 dir = os.path.dirname(__file__)
 
 
-def setTemplateVariables(newfile):
+def set_template_variables(newfile):
 
     with newfile as f:
         first_line = f.readline()
@@ -20,7 +20,7 @@ def setTemplateVariables(newfile):
     return title
 
 
-def convertTxtToHTML(filename):
+def convert_txt_to_HTML(filename):
 
     # Get a copy of the template to use for new .html file creation
     f = open(os.path.join(dir, 'templates/basic.html'), 'r+')
@@ -29,7 +29,7 @@ def convertTxtToHTML(filename):
 
     newfile = open(os.path.join(dir, 'templates/%s.txt') % filename, 'r+')
 
-    title = setTemplateVariables(newfile)
+    title = set_template_variables(newfile)
 
     newfile.close()
 
