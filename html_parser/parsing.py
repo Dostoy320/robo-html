@@ -68,7 +68,7 @@ class TextParsing():
                 html_lines.append('<i>')
                 italics = True
             if re.match(on_screen_text_pattern, line):
-                html_lines.append('<block>')
+                html_lines.append('<block>ON SCREEN TEXT<br>')
                 block = True
             if html_lines[-1] == '<p>' and timecode is italics is False and block is False:
                 voice = True
