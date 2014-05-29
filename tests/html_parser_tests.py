@@ -2,7 +2,7 @@ from nose.tools import *
 import html_parser
 import os
 from html_parser.parsing import TextParsing
-from html_parser.html_parser import convert_txt_to_HTML
+from html_parser.html_parser import build_HTML_from_TXT
 
 
 def setup():
@@ -22,6 +22,6 @@ def test_get_file_name_from_path():
 
 
 def test_convert_txt_to_HTML():
-    convert_txt_to_HTML('test')
+    build_HTML_from_TXT('test')
     finishedFile = open('html_parser/templates/test.html', 'r')
     assert "<title>A Test Document</title>" in finishedFile.read()

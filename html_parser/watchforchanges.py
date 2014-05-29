@@ -5,7 +5,7 @@ import sys
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 from parsing import TextParsing
-from html_parser import convertTxtToHTML
+from html_parser import build_HTML_from_TXT
 
 
 class MyHandler(PatternMatchingEventHandler):
@@ -30,7 +30,7 @@ class MyHandler(PatternMatchingEventHandler):
         textparsing = TextParsing()
         filename = textparsing.get_file_name_from_path(event.src_path)
 
-        convertTxtToHTML(filename)
+        build_HTML_from_TXT(filename)
 
     def on_modified(self, event):
         self.process(event)
